@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.nav-container{
+    background-color: lightcyan;
+    border: 1rem solid lightblue;
+}
+.nav-container ul{
+    display: flex;
+    justify-content: space-around;
+}
+.menuitem{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+.hide{
+    display: none!important;
+}
+.highlight{
+    border-bottom: darkblue;
+    color:darkblue;
+}
