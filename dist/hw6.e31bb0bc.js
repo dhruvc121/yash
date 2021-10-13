@@ -29566,38 +29566,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"menu.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var menu = function menu(props) {
-  console.log(props);
-  return /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "nav-container"
-  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
-    className: "menuitem" + (props.show === "home" ? " highlight" : "")
-  }, "Home"), /*#__PURE__*/_react.default.createElement("li", {
-    className: "menuitem" + (props.show === "activities" ? " highlight" : "")
-  }, "Activities"), /*#__PURE__*/_react.default.createElement("li", {
-    className: "menuitem" + (props.show === "login" ? " highlight" : "") + (props.role === "user" ? " hide" : "")
-  }, "Login"), /*#__PURE__*/_react.default.createElement("li", {
-    className: "menuitem" + (props.show === "membership" ? " highlight" : "") + (props.role === "user" ? " hide" : "")
-  }, "Membership"), /*#__PURE__*/_react.default.createElement("li", {
-    className: "menuitem" + (props.role === "guest" ? " hide" : "")
-  }, "Logout"))));
-};
-
-var _default = menu;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Images/LaughingGirl.jpg":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"Images/LaughingGirl.jpg":[function(require,module,exports) {
 module.exports = "/LaughingGirl.29075ff6.jpg";
 },{}],"home.js":[function(require,module,exports) {
 "use strict";
@@ -29907,98 +29876,436 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-var membership = function membership() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", {
-    style: {
-      textAlign: "center"
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var membership = /*#__PURE__*/function (_Component) {
+  _inherits(membership, _Component);
+
+  var _super = _createSuper(membership);
+
+  function membership(props) {
+    var _this;
+
+    _classCallCheck(this, membership);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      name: "",
+      email: "",
+      password: "",
+      ageGrp: "",
+      comment: "",
+      show: false
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(membership, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      switch (event.target.name) {
+        case 'Name':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            name: event.target.value
+          }));
+          break;
+
+        case 'Email':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            email: event.target.value
+          }));
+          break;
+
+        case 'Password':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            password: event.target.value
+          }));
+          break;
+
+        case 'Age':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            ageGrp: event.target.value
+          }));
+          break;
+
+        case 'Comment':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            comment: event.target.value
+          }));
+          break;
+
+        default:
+          break;
+      }
     }
-  }, "Register here.....!!!")), /*#__PURE__*/_react.default.createElement("form", {
-    action: true,
-    method: "get",
-    style: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center"
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+        show: !this.state.show
+      }));
     }
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      background: "gray",
-      width: "30%",
-      padding: "5rem"
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", {
+        style: {
+          textAlign: "center"
+        }
+      }, "Register here.....!!!")), /*#__PURE__*/_react.default.createElement("form", {
+        action: true,
+        method: "get",
+        style: {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center"
+        }
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          background: "gray",
+          width: "30%",
+          padding: "5rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "name"
+      }, "Name : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+        value: this.state.name,
+        onChange: this.handleChange,
+        style: {
+          width: "100%",
+          lineHeight: "1.5rem"
+        },
+        type: "text",
+        name: "Name",
+        id: "Name",
+        required: true
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "Email"
+      }, "Email : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+        value: this.state.email,
+        onChange: this.handleChange,
+        style: {
+          width: "100%",
+          lineHeight: "1.5rem"
+        },
+        type: "email",
+        name: "Email",
+        id: "Email",
+        required: true
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "Password"
+      }, "Password : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
+        value: this.state.password,
+        onChange: this.handleChange,
+        style: {
+          width: "100%",
+          lineHeight: "1.5rem"
+        },
+        type: "password",
+        name: "Password",
+        id: "Password"
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "Age"
+      }, "Age group : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("select", {
+        id: "Age",
+        name: "Age",
+        value: this.state.ageGrp,
+        onChange: this.handleChange
+      }, /*#__PURE__*/_react.default.createElement("option", {
+        value: true
+      }), /*#__PURE__*/_react.default.createElement("option", {
+        value: "early"
+      }, "0-15"), /*#__PURE__*/_react.default.createElement("option", {
+        value: "Adult"
+      }, "16-25"), /*#__PURE__*/_react.default.createElement("option", {
+        value: "middle"
+      }, "26-45"), /*#__PURE__*/_react.default.createElement("option", {
+        value: "old"
+      }, "45+"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
+        htmlFor: "Comment"
+      }, "Comment : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("textarea", {
+        value: this.state.comment,
+        onChange: this.handleChange,
+        style: {
+          width: "100%",
+          lineHeight: "1.5rem"
+        },
+        type: "text",
+        name: "Comment",
+        id: "Comment"
+      })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+        id: "submit",
+        type: "button",
+        onClick: this.handleSubmit,
+        style: {
+          width: "100%",
+          lineHeight: "1.5rem",
+          padding: "0.5rem 1rem"
+        }
+      }, "Sign me Up !!")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement("section", {
+        hidden: !this.state.show
+      }, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "thankyou-box",
+        style: {
+          border: "5px solid seagreen",
+          height: "14rem",
+          width: "25rem",
+          padding: "2rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("h3", null, /*#__PURE__*/_react.default.createElement("center", null, "Thanks For Signing Up!!")), this.state.password.length < 8 ? /*#__PURE__*/_react.default.createElement("h3", {
+        style: {
+          marginTop: "2rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("center", null, "password too short:(")) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, "Welcome:", this.state.name, /*#__PURE__*/_react.default.createElement("br", null), "Your Email:", this.state.email, /*#__PURE__*/_react.default.createElement("br", null), "You are:", this.state.ageGrp, /*#__PURE__*/_react.default.createElement("br", null), "Your comments:", this.state.comment), /*#__PURE__*/_react.default.createElement("button", {
+        style: {
+          padding: "0.5rem 1rem",
+          marginTop: "1rem"
+        },
+        onClick: this.handleSubmit
+      }, "close"))))));
     }
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "name"
-  }, "Name : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
-    style: {
-      width: "100%",
-      lineHeight: "1.5rem"
-    },
-    type: "text",
-    name: "Name",
-    id: "Name",
-    required: true
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "Email"
-  }, "Email : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
-    style: {
-      width: "100%",
-      lineHeight: "1.5rem"
-    },
-    type: "email",
-    name: "Email",
-    id: "Email",
-    required: true
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "Password"
-  }, "Password : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
-    style: {
-      width: "100%",
-      lineHeight: "1.5rem"
-    },
-    type: "password",
-    name: "Password",
-    id: "Password"
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "Age"
-  }, "Age group : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("select", {
-    id: "Age"
-  }, /*#__PURE__*/_react.default.createElement("option", {
-    value: true
-  }), /*#__PURE__*/_react.default.createElement("option", {
-    value: "early"
-  }, "0-15"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Adult"
-  }, "16-25"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "middle"
-  }, "26-45"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "old"
-  }, "45+"))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "Comment"
-  }, "Comment : ")), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("textarea", {
-    style: {
-      width: "100%",
-      lineHeight: "1.5rem"
-    },
-    type: "text",
-    name: "Commnt",
-    id: "Comment"
-  })), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
-    id: "submit",
-    type: "button",
-    style: {
-      width: "100%",
-      lineHeight: "1.5rem",
-      padding: "0.5rem 1rem"
-    }
-  }, "Sign me Up !!")))), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
-};
+  }]);
+
+  return membership;
+}(_react.Component);
 
 var _default = membership;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"activityManage.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var Activitymanage = /*#__PURE__*/function (_Component) {
+  _inherits(Activitymanage, _Component);
+
+  var _super = _createSuper(Activitymanage);
+
+  function Activitymanage() {
+    _classCallCheck(this, Activitymanage);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(Activitymanage, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
+        style: {
+          padding: "2rem",
+          width: "30rem",
+          height: "15rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("h2", null, "Add Activity"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Name:"), /*#__PURE__*/_react.default.createElement("input", {
+        style: {
+          marginTop: "1rem"
+        },
+        type: "text"
+      })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Date:"), /*#__PURE__*/_react.default.createElement("input", {
+        style: {
+          marginTop: "1rem"
+        },
+        type: "text"
+      })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Guest:"), /*#__PURE__*/_react.default.createElement("input", {
+        style: {
+          marginTop: "1rem"
+        },
+        type: "text"
+      })), /*#__PURE__*/_react.default.createElement("button", {
+        style: {
+          padding: ".5rem 1rem",
+          marginTop: "1rem"
+        }
+      }, "Add"))), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("h2", {
+        style: {
+          marginTop: "2rem"
+        }
+      }, "Activities"), /*#__PURE__*/_react.default.createElement("hr", {
+        style: {
+          width: "50%"
+        }
+      }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", {
+        style: {
+          width: "100%",
+          border: "1px solid black",
+          borderCollapse: "collapse",
+          margin: "2rem 0"
+        }
+      }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", {
+        style: {
+          border: "1px solid black"
+        }
+      }, /*#__PURE__*/_react.default.createElement("th", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }), /*#__PURE__*/_react.default.createElement("th", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Name"), /*#__PURE__*/_react.default.createElement("th", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Date"), /*#__PURE__*/_react.default.createElement("th", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Guest"))), /*#__PURE__*/_react.default.createElement("tbody", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Musical Night"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "12 Sept, 15 Sept, 18 Sept"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "The Weekend")), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Yin Yoga Session"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "14 Sept, 17 Sept, 20 Sept"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "Silly Maller")), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "October Game"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "12 oct, 15 oct, 18 oct"), /*#__PURE__*/_react.default.createElement("td", {
+        style: {
+          textAlign: "justify",
+          border: "1px solid black",
+          padding: "0.5rem 1rem"
+        }
+      }, "chang lie")))));
+    }
+  }]);
+
+  return Activitymanage;
+}(_react.Component);
+
+var _default = Activitymanage;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
@@ -30079,8 +30386,6 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _menu = _interopRequireDefault(require("./menu"));
-
 var _home = _interopRequireDefault(require("./home"));
 
 var _activities = _interopRequireDefault(require("./activities"));
@@ -30088,6 +30393,8 @@ var _activities = _interopRequireDefault(require("./activities"));
 var _login = _interopRequireDefault(require("./login"));
 
 var _membership = _interopRequireDefault(require("./membership"));
+
+var _activityManage = _interopRequireDefault(require("./activityManage"));
 
 require("./index.css");
 
@@ -30127,38 +30434,68 @@ var App = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      role: "user",
-      show: "login"
+      role: "admin",
+      show: ""
     };
+    _this.menuChange = _this.menuChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(App, [{
+    key: "menuChange",
+    value: function menuChange(e) {
+      //called when menutitem is clicked
+      this.setState({
+        show: e.target.innerHTML //set show variable
+
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var content = /*#__PURE__*/_react.default.createElement(_home.default, null);
 
       switch (this.state.show) {
-        case 'activities':
+        case 'Activities':
           content = /*#__PURE__*/_react.default.createElement(_activities.default, null);
           break;
 
-        case 'login':
+        case 'Login':
           content = /*#__PURE__*/_react.default.createElement(_login.default, null);
           break;
 
-        case 'membership':
+        case 'Membership':
           content = /*#__PURE__*/_react.default.createElement(_membership.default, null);
+          break;
+
+        case 'Activity Manage':
+          content = /*#__PURE__*/_react.default.createElement(_activityManage.default, null);
           break;
 
         default:
           content = /*#__PURE__*/_react.default.createElement(_home.default, null);
       }
 
-      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_menu.default, {
-        role: this.state.role,
-        show: this.state.show
-      }), content);
+      return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("div", {
+        className: "nav-container"
+      }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.show === "home" ? " highlight" : ""),
+        onClick: this.menuChange
+      }, "Home"), /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.show === "activities" ? " highlight" : ""),
+        onClick: this.menuChange
+      }, "Activities"), /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.show === "login" ? " highlight" : "") + (this.state.role === "user" || this.state.role === "admin" ? " hide" : ""),
+        onClick: this.menuChange
+      }, "Login"), /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.show === "login" ? " highlight" : "") + (this.state.role !== "admin" ? " hide" : ""),
+        onClick: this.menuChange
+      }, "Activity Manage"), /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.show === "membership" ? " highlight" : "") + (this.state.role === "user" ? " hide" : ""),
+        onClick: this.menuChange
+      }, "Membership"), /*#__PURE__*/_react.default.createElement("li", {
+        className: "menuitem" + (this.state.role === "guest" ? " hide" : "")
+      }, "Logout")))))), content);
     }
   }]);
 
@@ -30166,7 +30503,7 @@ var App = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./menu":"menu.js","./home":"home.js","./activities":"activities.js","./login":"login.js","./membership":"membership.js","./index.css":"index.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./home":"home.js","./activities":"activities.js","./login":"login.js","./membership":"membership.js","./activityManage":"activityManage.js","./index.css":"index.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30194,7 +30531,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57893" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61379" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

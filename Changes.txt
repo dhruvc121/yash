@@ -1,0 +1,16 @@
+for question 1:
+
+->menu.js is now useless, imported its content in index.js in main function return block.
+->on click par setsate use karke show ka state change kiya hai..
+
+
+for question 2 :
+->added states to manage values of membership form
+->there is only one validation : password too short.. you can add more
+->on click div display at bottom using conditional rendering- see attribute "hidden" in div tag in membership.js
+
+for question 3 & 4:
+-> UI is ready you just have to mock the screenshots... sir ne hi bola hai
+-> add ke liye fill the input in above form and add a row in below table manually
+-> for delete just remove any ramdom row manually
+
