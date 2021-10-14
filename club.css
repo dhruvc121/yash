@@ -1,0 +1,50 @@
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  height: 35px;
+}
+tr {
+  background-color: sandybrown;
+}
+tr:hover {
+  background-color: palegoldenrod;
+}
+table {
+  width: 100%;
+}
+td:nth-child(2) {
+  text-align: center;
+}
+td:nth-child(1) {
+  text-align: center;
+}
+td:nth-child(3) {
+  text-align: left;
+}
+input:invalid {
+  background-color: red;
+}
+input:valid {
+  background-color: royalblue;
+}
+
+#ThanksDialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(60, 228, 60, 0.5);
+  height: 100%;
+  width: 100%;
+  /* opacity: 0.4; */
+  z-index: 1;
+  overflow: auto;
+}
+/* #ThanksDialog.hide {
+  display: none;
+}
+#ThanksDialog.show {
+  display: block;
+} */

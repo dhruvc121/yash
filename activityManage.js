@@ -35,7 +35,7 @@ class Activitymanage extends Component {
         })
         console.log(this.state,newArr)
     }
-    handleDelete(index){
+    handleDelete(index){                
         let newArr=[...this.state.events]
         newArr.splice(index,1)
         this.setState({
