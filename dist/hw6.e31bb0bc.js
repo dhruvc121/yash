@@ -29630,15 +29630,15 @@ module.exports = "/laugh_logo.d75b7e76.png";
 },{}],"events.json":[function(require,module,exports) {
 module.exports = [{
   "name": "Musical Night",
-  "Dates": ["12 Sept", "15 Sept", "18 Sept"],
+  "Dates": "12 Sept, 15 Sept, 18 Sept",
   "Guest": "The Weekend"
 }, {
   "name": "Yin Yoga Session",
-  "Dates": ["14 Sept", "17 Sept", "20 Sept"],
+  "Dates": "14 Sept, 17 Sept, 20 Sept",
   "Guest": "Silly Maller"
 }, {
   "name": "October Game",
-  "Dates": ["12 oct", "15 oct", "18 oct"],
+  "Dates": "12 oct, 15 oct, 18 oct",
   "Guest": "chang lie"
 }];
 },{}],"activities.js":[function(require,module,exports) {
@@ -30117,11 +30117,33 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _events = _interopRequireDefault(require("./events.json"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -30148,15 +30170,80 @@ var Activitymanage = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(Activitymanage);
 
-  function Activitymanage() {
+  function Activitymanage(props) {
+    var _this;
+
     _classCallCheck(this, Activitymanage);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.state = {
+      events: _events.default,
+      name: "",
+      Dates: [],
+      Guest: ""
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Activitymanage, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      console.log(event.target.name);
+
+      switch (event.target.name) {
+        case 'name':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            name: event.target.value
+          }));
+          break;
+
+        case 'Dates':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            Dates: event.target.value
+          }));
+          break;
+
+        case 'Guest':
+          this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+            Guest: event.target.value
+          }));
+          break;
+
+        default:
+          break;
+      }
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var newArr = [].concat(_toConsumableArray(this.state.events), [{
+        name: this.state.name,
+        Dates: this.state.Dates,
+        Guest: this.state.Guest
+      }]);
+      this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+        events: newArr
+      }));
+      console.log(this.state, newArr);
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(index) {
+      var newArr = _toConsumableArray(this.state.events);
+
+      newArr.splice(index, 1);
+      this.setState(_objectSpread(_objectSpread({}, this.state), {}, {
+        events: newArr
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("center", null, /*#__PURE__*/_react.default.createElement("div", {
         style: {
           padding: "2rem",
@@ -30164,16 +30251,25 @@ var Activitymanage = /*#__PURE__*/function (_Component) {
           height: "15rem"
         }
       }, /*#__PURE__*/_react.default.createElement("h2", null, "Add Activity"), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Name:"), /*#__PURE__*/_react.default.createElement("input", {
+        name: "name",
+        value: this.state.name,
+        onChange: this.handleChange,
         style: {
           marginTop: "1rem"
         },
         type: "text"
       })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Date:"), /*#__PURE__*/_react.default.createElement("input", {
+        name: "Dates",
+        value: this.state.Dates,
+        onChange: this.handleChange,
         style: {
           marginTop: "1rem"
         },
         type: "text"
       })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, "Guest:"), /*#__PURE__*/_react.default.createElement("input", {
+        name: "Guest",
+        value: this.state.Guest,
+        onChange: this.handleChange,
         style: {
           marginTop: "1rem"
         },
@@ -30182,7 +30278,8 @@ var Activitymanage = /*#__PURE__*/function (_Component) {
         style: {
           padding: ".5rem 1rem",
           marginTop: "1rem"
-        }
+        },
+        onClick: this.handleSubmit
       }, "Add"))), /*#__PURE__*/_react.default.createElement("hr", null), /*#__PURE__*/_react.default.createElement("h2", {
         style: {
           marginTop: "2rem"
@@ -30226,79 +30323,37 @@ var Activitymanage = /*#__PURE__*/function (_Component) {
           border: "1px solid black",
           padding: "0.5rem 1rem"
         }
-      }, "Guest"))), /*#__PURE__*/_react.default.createElement("tbody", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "Musical Night"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "12 Sept, 15 Sept, 18 Sept"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "The Weekend")), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "Yin Yoga Session"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "14 Sept, 17 Sept, 20 Sept"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "Silly Maller")), /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, /*#__PURE__*/_react.default.createElement("button", null, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "October Game"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "12 oct, 15 oct, 18 oct"), /*#__PURE__*/_react.default.createElement("td", {
-        style: {
-          textAlign: "justify",
-          border: "1px solid black",
-          padding: "0.5rem 1rem"
-        }
-      }, "chang lie")))));
+      }, "Guest"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.events.map(function (row, index) {
+        return /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("td", {
+          style: {
+            textAlign: "justify",
+            border: "1px solid black",
+            padding: "0.5rem 1rem"
+          }
+        }, /*#__PURE__*/_react.default.createElement("button", {
+          onClick: function onClick(index) {
+            _this2.handleDelete(index);
+          }
+        }, "Delete")), /*#__PURE__*/_react.default.createElement("td", {
+          style: {
+            textAlign: "justify",
+            border: "1px solid black",
+            padding: "0.5rem 1rem"
+          }
+        }, row.name), /*#__PURE__*/_react.default.createElement("td", {
+          style: {
+            textAlign: "justify",
+            border: "1px solid black",
+            padding: "0.5rem 1rem"
+          }
+        }, row.Dates), /*#__PURE__*/_react.default.createElement("td", {
+          style: {
+            textAlign: "justify",
+            border: "1px solid black",
+            padding: "0.5rem 1rem"
+          }
+        }, row.Guest));
+      }))));
     }
   }]);
 
@@ -30307,7 +30362,7 @@ var Activitymanage = /*#__PURE__*/function (_Component) {
 
 var _default = Activitymanage;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./events.json":"events.json"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -30531,7 +30586,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61379" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63931" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

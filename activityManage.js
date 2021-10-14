@@ -1,7 +1,47 @@
 import React, { Component } from 'react';
+import events from './events.json'
 
 
 class Activitymanage extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            events:events,
+            name:"",
+            Dates:[],
+            Guest:""
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(event) {
+        console.log(event.target.name)
+        switch(event.target.name){
+            case 'name':this.setState({...this.state,name:event.target.value})
+                        break;
+            case 'Dates':this.setState({...this.state,Dates:event.target.value})
+                        break;
+            case 'Guest':this.setState({...this.state,Guest:event.target.value})
+                        break;
+            default: break;
+        }
+      }
+    
+      handleSubmit(event) {
+        event.preventDefault();
+        let newArr=[...this.state.events,{name:this.state.name,Dates:this.state.Dates,Guest:this.state.Guest}]
+        this.setState({
+            ...this.state,events:newArr
+        })
+        console.log(this.state,newArr)
+    }
+    handleDelete(index){
+        let newArr=[...this.state.events]
+        newArr.splice(index,1)
+        this.setState({
+            ...this.state,events:newArr
+        })
+    }
     render() {
         return (
             <div>
@@ -15,17 +55,17 @@ class Activitymanage extends Component {
                     <hr/>
                     <div>
                     <label>Name:</label>
-                    <input style={{marginTop:"1rem"}} type="text" />
+                    <input name="name" value={this.state.name} onChange={this.handleChange} style={{marginTop:"1rem"}} type="text" />
                     </div>
                     <div>
                     <label>Date:</label>
-                    <input style={{marginTop:"1rem"}} type="text" />
+                    <input name="Dates" value={this.state.Dates} onChange={this.handleChange} style={{marginTop:"1rem"}} type="text" />
                     </div>
                     <div>
                     <label>Guest:</label>
-                    <input style={{marginTop:"1rem"}} type="text" />
+                    <input name="Guest" value={this.state.Guest} onChange={this.handleChange} style={{marginTop:"1rem"}} type="text" />
                     </div>
-                    <button style={{padding:".5rem 1rem",marginTop:"1rem"}}>Add</button>
+                    <button style={{padding:".5rem 1rem",marginTop:"1rem"}} onClick={this.handleSubmit}>Add</button>
                 </div>
             </center>
             <hr/>
@@ -42,24 +82,16 @@ class Activitymanage extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}><button>Delete</button></td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>Musical Night</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>12 Sept, 15 Sept, 18 Sept</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>The Weekend</td>
-                    </tr>
-                    <tr>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}><button>Delete</button></td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>Yin Yoga Session</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>14 Sept, 17 Sept, 20 Sept</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>Silly Maller</td>
-                    </tr>
-                    <tr>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}><button>Delete</button></td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>October Game</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>12 oct, 15 oct, 18 oct</td>
-                        <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>chang lie</td>
-                    </tr>
+                    {
+                        this.state.events.map((row,index)=>{
+                           return <tr>
+                                <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}><button onClick={(index)=>{this.handleDelete(index)}}>Delete</button></td>
+                                <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{row.name}</td>
+                                <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{row.Dates}</td>
+                                <td  style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{row.Guest}</td>
+                            </tr>
+                        })
+                    }
                 </tbody>
             </table>
             </div>

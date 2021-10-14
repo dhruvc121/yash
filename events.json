@@ -1,17 +1,17 @@
     [
     {
         "name": "Musical Night",
-        "Dates": ["12 Sept", "15 Sept", "18 Sept"],
+        "Dates": "12 Sept, 15 Sept, 18 Sept",
         "Guest": "The Weekend"
     },
     {
         "name": "Yin Yoga Session",
-        "Dates": ["14 Sept", "17 Sept", "20 Sept"],
+        "Dates": "14 Sept, 17 Sept, 20 Sept",
         "Guest": "Silly Maller"
     },
     {
         "name": "October Game",
-        "Dates": ["12 oct", "15 oct", "18 oct"],
+        "Dates": "12 oct, 15 oct, 18 oct",
         "Guest": "chang lie"
     }
 ]
