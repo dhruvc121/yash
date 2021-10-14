@@ -29807,9 +29807,7 @@ var Activities = function Activities() {
         border: "1px solid black",
         padding: "0.5rem 1rem"
       }
-    }, rowObj.Dates.map(function (date) {
-      return date + ", ";
-    })), /*#__PURE__*/_react.default.createElement("td", {
+    }, rowObj.Dates), /*#__PURE__*/_react.default.createElement("td", {
       style: {
         textAlign: "justify",
         border: "1px solid black",

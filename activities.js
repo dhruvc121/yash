@@ -60,7 +60,7 @@ const Activities=()=>{
                     events.map((rowObj,index)=>{
                         return <tr style={{border:"1px solid black"}} key="index">
                             <td style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{rowObj.name}</td>
-                            <td style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{rowObj.Dates.map((date)=>{return date+", "})}</td>
+                            <td style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{rowObj.Dates}</td>
                             <td style={{textAlign:"justify", border:"1px solid black", padding:"0.5rem 1rem"}}>{rowObj.Guest}</td>
                         </tr>
                     })
